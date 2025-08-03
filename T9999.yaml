@@ -233,10 +233,11 @@ atomic_tests:
         Write-Host "[*] Clearing attacker traces..."
         wevtutil cl Security
         wevtutil cl System
-        Remove-Item "C:\Temp\lookbot.exe" -Force -ErrorAction SilentlyContinue
-        Remove-Item "C:\Temp\mimikatz.exe" -Force -ErrorAction SilentlyContinue
+        #Remove-Item "C:\Temp\lookbot.exe" -Force -ErrorAction SilentlyContinue
+        #Remove-Item "C:\Temp\mimikatz.exe" -Force -ErrorAction SilentlyContinue
         Write-Host "[+] Event logs cleared and temporary files deleted"
     attack_technique:
       - T1070.001
       - T1070.004
+
 
